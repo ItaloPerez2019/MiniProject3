@@ -17,8 +17,10 @@ class UserTest extends TestCase
     {
         $this->assertTrue(true);
     }
-    public function numberOfUsers()
+    public function countRegistrationUsers()
     {
-        $this->assertTrue(true);
+        $response = $this->get('/register');
+
+        $response->assertStatus(200);
     }
 }
